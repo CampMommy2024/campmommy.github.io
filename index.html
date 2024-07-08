@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <title>Camp Mommy</title>
+    <head>
+        <link rel="icon" href="https://campmommy.github.io/images/logo.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <style>
+            .header {
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+                padding: 10px;
+                transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+                background: linear-gradient(to right, #d62323, #4f2bf1); /* Example gradient */
+            }
+
+            .header.hidden {
+                transform: translateY(-100%);
+            }
+
+            @media (min-width: 1164px) {
+                .logo {
+                    float: left;
+                }
+                .options {
+                    float: right;
+                    margin-right: 26px;
+                }
+            }
+
+            .logo img {
+                height: 100px;
+                margin-left: 10px;
+                margin-bottom: 0px;
+            }
+
+            .options button {
+                background-color:rgba(0, 0, 0, 0);
+                border-color: white;
+                border-style:solid;
+                color: #fff;
+                font-size: 25px;
+                padding: 10px;
+                margin-top: 25px;
+                margin-left: 10px;
+                cursor: pointer;
+                font-family: 'Fredoka', sans-serif;
+                transition: background-color 0.5s ease-in-out;
+                border-radius: 20px;
+                color: white;
+            }
+
+            .options button:hover {
+                background-color: black;
+            }
+
+            body {
+                background-image: url(images/background.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+                margin-top: 100px; /* Default margin for desktop */
+            }
+
+            @media (max-width: 1164px) {
+                body {
+                    margin-top: 200px; /* Adjust this value based on the header height on mobile */
+                }
+            }
+
+            body {
+                color: white;
+            }
+
+            h1 {
+                font-size: 100px;
+                text-align: center;
+                font-family: 'Noto Sans';
+                font-weight: 900;
+            }
+
+            h2 {
+                font-size: 60px;
+                text-align: center;
+                font-family: Noto Sans;
+                font-weight: 500;
+            }
+
+            @keyframes strobe {
+                0% {
+                    background-position: 0% 50%;
+                }
+                20% {
+                    background-position: 100% 50%;
+                }
+                40% {
+                    background-position: 0% 50%;
+                }
+                60% {
+                    background-position: 100% 50%;
+                }
+                80% {
+                    background-position: 0% 50%;
+                }
+                100% {
+                    background-position: 100% 50%;
+                }
+            }
+
+            .gradient-text {
+                background: linear-gradient(270deg, #ff6b6b, #ff8e72, #ffe47a, #ccf86a, #6be3ff, #a26bff, #ff6bff, #ff6b6b);
+                background-size: 1600% 1600%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: strobe 8s linear infinite; /* Faster animation */
+            }
+            
+            .video-btn{
+                height: 100px;
+                width: 400px;
+                display: block;
+                margin: auto;
+                border-radius: 20px
+                
+            }
+            .video-btn a {
+                color: black;
+                font-family: Noto Sans;
+                font-size: 30px;
+            }
+            .footer {
+                font-family: Noto Sans;
+                font-weight: 800;
+                margin: -10px
+            }
+            html {
+                overflow-x: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">
+                <center>
+                <img src="images/long logo white.png" alt="Logo">
+                </center>
+            </div>
+            <center>
+            <div class="options">
+                <button type="button" onclick="window.location='index.html'" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0)">Home Page</button>
+                <button type="button" onclick="window.location='newsletters.html'">Newsletters</button>
+                <button type="button" onclick="window.location='videos.html'">Videos</button>
+                <button type="button" onclick="window.location='contact.html'">Contact Us</button>
+            </div>
+            </center>
+        </div>
+
+        <h1 style="color: rgb(77, 163, 66);">
+            <span style="font-size: 45px; padding: 10px; margin: 0px; color:white"> Welcome to </span> <br>
+            <span class="gradient-text">CAMP MOMMY 2024!</span>
+        </h1>
+
+        <div>
+            <button class="video-btn"><a href="videos.html">Watch this week's video!</a></button>
+        </div>
+        
+        <h2>This week's newsletter!</h2>
+        
+        <iframe src="assets/week2.pdf" style="width: 80%; height: 2000px; display: block; margin: auto;"></iframe>
+
+        <script>
+            let lastScrollTop = 0;
+            const header = document.querySelector('.header');
+
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    header.classList.add('hidden');
+                } else {
+                    // Scrolling up
+                    header.classList.remove('hidden');
+                }
+                lastScrollTop = scrollTop;
+            });
+        </script>
+       
+        <footer>
+            <h2 class="footer" style="margin-top: 20px; font-size: 20px; background-color: black; color: white; padding: 0px;"> ©CAMP MOMMY 2024. ALL RIGHT RESERVED. WEBSITE MADE BY YEHUDA HEINEMANN.</h2>
+        </footer> 
+    </body>
+</html>
