@@ -178,8 +178,8 @@
             <center>
             <div class="options">
                 <button type="button" onclick="window.location='index.html'">Home Page</button>
-                <button type="button" onclick="window.location='newsletters.html'" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0)">Newsletters</button>
-                <button type="button" onclick="window.location='videos.html'">Videos</button>
+                <button type="button" onclick="window.location='newsletters.html'">Newsletters</button>
+                <button type="button" onclick="window.location='videos.html'" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0)">Videos</button>
                 <button type="button" onclick="window.location='contact.html'">Contact Us</button>
             </div>
             </center>
@@ -187,8 +187,8 @@
 
         <p style="margin-top: 150px;"></p>
 
-        <h1>Camp Mommy Newsletters</h1>
-        <h2>Edited and written by <span class="gradient-text">Eliyahu Heinemann</span></h2>
+        <h1>Camp Mommy Videos</h1>
+        <h2>Edited and produced by <span class="gradient-text">Eliyahu Heinemann</span></h2>
 
         <div style="width: 100%">
             <div id="buttons" style="text-align: center;">
@@ -197,20 +197,20 @@
         </div>
 
         <div style="text-align: center" id="pdf">
-            <iframe style="position: auto; width: 75%; height: 1800px;" src="assets/week2.pdf" width="800" height="1200" class="newspdf"></iframe>
+            <iframe style="position: auto; width: 50%; height: 500px;" src="assets/video3.mp4" width="800" height="5000" class="newspdf"></iframe>
         </div>
 
         <script>
             onload = function() {
-                newsletterbtn('1');
                 newsletterbtn('2');
+                newsletterbtn('3');
             }
             function newsletterbtn(num) {
-             document.getElementById("buttons").innerHTML += "<a id='openclose' class='button' onclick='openclose(\"" + num + "\")' style='width: 200px; height: auto;'>Week #" + num + " <br> </a>";
+             document.getElementById("buttons").innerHTML += "<a id='openclose' class='button' onclick='openclose(\"" + num + "\")' style='width: 320px; height: auto;'>Week #" + num + " Video <br> </a>";
             }
             
             function openclose(num) {
-              document.getElementById("pdf").innerHTML = "<iframe id='page' src='assets/week" + num + ".pdf#toolbar=1&navpanes=0&statusbar=0&view=FitW height='100%' width='80%' frameborder='0' style='height: 1200px; width: 75%; margin-bottom: 10%;'> </iframe>";
+              document.getElementById("pdf").innerHTML = "<iframe id='page' src='assets/video" + num + ".mp4#toolbar=1&navpanes=0&statusbar=0&view=FitW height='auto' width='50%' frameborder='0' style='height: 500px; width: 50%; margin-bottom: 10%;'> </iframe>";
             }
             
             
